@@ -13,7 +13,15 @@ module.exports = {
       },
       fontFamily: {
         'dance': [ 'Dancing Script', 'cursive'],
-        'arsenal': ['Arsenal', 'sans-serif']
+        'arsenal': ['Arsenal', 'sans-serif'],
+        'anton': ['Anton', 'sans-serif'],
+        'abril': ['Abril Fatface', 'cursive']
+      },
+      backgroundImage: {
+        'about-bg': "url('/src/images/about-bg-img.jpeg')",
+      },
+      boxShadow: {
+        '3xl': '1px 2px 30px 2px rgba(0,0,0,0.2)',
       }
     },
   },

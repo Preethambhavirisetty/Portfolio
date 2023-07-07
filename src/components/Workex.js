@@ -1,35 +1,36 @@
 import {motion, useTransform, useScroll} from 'framer-motion';
 import {useRef} from 'react';
+import resume_pree from '../Krishna_bhavirisetty_resume.docx'
 
 function useParallax(value, distance) {
     return useTransform(value, [0, 1], [-distance, distance]);
   }
 
 const Content = ({exps, setDarkMode, darkMode, pageActive}) => {
-    const darkBG = darkMode ? 'bg-gray-900' : 'bg-gray-800';
-    const darkText = darkMode ? 'text-[#D1D2D3]' : 'text-[#D1D2D3]';
-    const darkBorder = darkMode ? 'border-[#D1D2D3]' : 'border-gray-900';
+    const darkBG = darkMode ? 'bg-gray-900' : 'bg-[#394867]';
+    const darkText = darkMode ? 'text-[#D1D2D3]' : 'text-[#F1F6F9]';
+    const darkBorder = darkMode ? 'border-[#D1D2D3]' : 'border-[#F1F6F9]';
 
     const work = useRef(null);
     const { scrollYProgress } = useScroll({ target: work });
     const y = useParallax(scrollYProgress, 300);
     const p = [];
     exps.forEach(({id,univname, stream, content, date}) => p.push(
-        <div className='w-full h-[25%] mobile:w-full flex flex-row tablet:even:flex-row-reverse laptop:even:flex-row-reverse desktop:even:flex-row-reverse justify-center text-center mobile:justify-around mobile:h-[45%]'>
-            <div className={`hidden tablet:flex laptop:flex desktop:flex w-[49%] h-[40%] flex-col justify-center items-center text-right px-4 mobile:w-[25%] mobile:text-left mobile:px-0`}>
+        <div className='w-full h-[20%] mobile:w-full flex flex-row tablet:even:flex-row-reverse laptop:even:flex-row-reverse desktop:even:flex-row-reverse justify-center text-center mobile:justify-around mobile:h-[45%]'>
+            <div className={`hidden tablet:flex laptop:flex desktop:flex w-[49%] h-[30%] flex-col justify-center items-center text-right px-4 mobile:w-[25%] mobile:text-left mobile:px-0`}>
                 <span className='text-[1.2rem] font-normal mobile:text-[0.7rem]'>{date}</span>
             </div>
-            {/* <div className={`w-[5%] h-full flex flex-col mobile:invisible`}></div> */}
+            <div className={`w-[5%] h-full flex flex-col mobile:invisible`}></div>
             <div className=' w-[10%] h-full flex flex-col items-center text-center'>
                 <span className={`w-[0%] border ${darkBorder} h-[15%]`}></span>
                 <span className={`${darkMode ? 'text-[#D1D2D3]' : 'text-gray-800'} w-[15%] border rounded-full p-4 flex items-center justify-center text-[0.8rem] `}><i className='fa fa-graduation-cap'></i></span>
                 <span className={`w-[0%] border ${darkBorder} h-full`}></span>
             </div>
-            {/* <div className='w-[5%] h-fit flex flex-col mobile:invisible '></div> */}
-            <div className={`${darkBG} ${darkText} relative w-[49%] h-[80%] border-transparent flex flex-col text-left rounded-xl px-4 py-4 mobile:text-sm mobile:w-[80%] mobile:h-fit
+            <div className='w-[5%] h-fit flex flex-col mobile:invisible '></div>
+            <div className={`${darkBG} ${darkText} relative w-[49%] h-fit border-transparent flex flex-col text-left rounded-xl px-4 py-4 mobile:text-sm mobile:w-[80%] mobile:h-fit
                 before:content-[''] before:absolute before:border before:top-[30px] ${id%2 != 0 ? "before:-left-3" : "tablet:before:-right-3 laptop:before:-right-3 desktop:before:-right-3 mobile:before:-left-3"} before:rotate-45 before:bg-inherit before:border before:border-l-transparent before:border-b-transparent before:border-t-0 before:border-r-0 before:p-[12px]`}>
                 <div className={`border-b ${darkBorder} flex flex-col`}>
-                    <span className='text-[1.3rem] font-normal mobile:text-[1rem]'>{univname}</span>
+                    <span className='text-[1.2rem] font-normal mobile:text-[1rem]'>{univname}</span>
                     <span className='text-[1rem] font-light mobile:text-[0.8rem]'>{stream}</span>
                     <span className='hidden mobile:flex text-[1rem] font-light'>{date}</span>
                 </div>
@@ -40,15 +41,18 @@ const Content = ({exps, setDarkMode, darkMode, pageActive}) => {
         </div>
     ))
     return (
-        <div className="mobile:snap-center flex flex-col">
+        <div className="flex flex-col mb-0 -space-y-[80vh]">
+            <div className={`sticky top-0 right-0 left-0 bottom-0 w-full p-2 ${darkMode ? "bg-gradient-to-r from-gray-800 to-gray-900":"bg-gradient-to-r from-[#D2E9E9] to-[#B0DAFF]"}  h-[100vh] flex flex-col items-center justify-start`}>
+                <span className="text-[2.5rem] font-normal mt-[20px]">Professional Journey</span>
+                {/* <a href={resume_pree} className={`${darkBG} ${darkText} font-light w-fit rounded-lg p-2 bg-gray-300`} download> Resume <i className="fa fa-download"></i></a> */}
+            </div>
             <div className={`hidden mobile:flex tablet:flex sticky top-0 left-0 right-0 flex justify-between items-center w-full z-10 p-2`}>
                 <span className={`text-xl font-bold text-left ${darkMode ? 'bg-black' : 'bg-white'} p-2`}>Workex</span>
             </div>
-            <section id="academics" className='h-[100vh] mobile:w-full tablet:snap-center laptop:snap-center desktop:snap-center flex flex-col justify-center items-center overflow-scroll px-8 pt-10 mobile:p-2 mobile:mt-[5rem]'>
+            <section id="academics" className= {`${darkMode ? "shadow shadow-black shadow-3xl" : "shadow-3xl"} h-[100vh] z-20 w-[95%] mx-auto bg-transparent rounded-xl  mobile:w-full flex flex-col justify-center items-center px-8 pt-10 mobile:p-2 mobile:mt-[5rem]`}>
+            {/* tablet:snap-center laptop:snap-center desktop:snap-center */}
                 {p}
             </section>
-            <span className={`${darkBG} ${darkText} sticky bottom-0 left-0 right-0 w-full p-2 bg-gray-300 text-center`}>Download Resume <i className="fa fa-download"></i></span>
-
         </div>
     )
 }

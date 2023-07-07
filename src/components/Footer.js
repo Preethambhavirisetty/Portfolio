@@ -51,27 +51,31 @@ const Footer = ({darkMode, setDarkMode, pageActive}) => {
         return () => clearTimeout(timer);
     }, [msg, rec])
     return (
-        <>
-        <div className={`hidden mobile:flex tablet:flex sticky top-0 left-0 right-0 flex justify-between items-center w-full z-10 p-2`}>
-            <span className={`text-xl font-bold text-left ${darkMode ? 'bg-black' : 'bg-white'} p-2`}>Contact</span>
+        <div className="flex flex-col mb-0 -space-y-[80vh]">
+        <div className={`sticky top-0 right-0 left-0 bottom-0 w-full z-[0] p-2 ${darkMode ? "bg-gradient-to-r from-gray-800 to-gray-900":"bg-gradient-to-r from-green-200 to-[#7AA874]"}   h-[100vh] flex flex-col items-center justify-start`}>
+            <span className="text-[2.5rem] font-normal mt-10">Get in touch!</span>
         </div>
-        <div id="contact" className="h-[100vh] flex flex-col justify-center items-center mobile:snap-center tablet:snap-center laptop:snap-center desktop:snap-center">
+        {/* <div className={`hidden mobile:flex tablet:flex sticky top-0 left-0 right-0 flex justify-between items-center w-full z-10 p-2`}>
+            <span className={`text-xl font-bold text-left ${darkMode ? 'bg-black' : 'bg-white'} p-2`}>Contact</span>
+        </div> */}
+        <div id="contact" className={`h-[100vh] z-20 w-[80%] bg-white mx-auto ${darkMode ? "shadow shadow-black shadow-3xl" : "shadow-3xl"} bg-transparent rounded-xl  mobile:w-full flex flex-col justify-center items-center px-8 pt-10 mobile:p-2 mobile:mt-[5rem]`}>
+        {/* mobile:snap-center tablet:snap-center laptop:snap-center desktop:snap-center */}
             <div className='w-[70%] h-[60vh] flex flex-col mobile:w-full'>
                 <div className="bg-inherit w-full h-[78%] flex flex-col justify-around items-center mx-auto p-4 small:w-full mobile:w-full transition duration-700">
                     <span className="font-light text-md transition duration-500 ease-in-out">{msg}</span>
                     <form className="w-full flex flex-col items-center justify-around space-y-2 p-4" onSubmit={handleSubmit}>
                         <span className="flex">
-                            <span className="text-[2.5rem] font-bold text-gray-600 small:text-[1.5rem]">C</span>
-                            <span className="text-[2.5rem] font-bold text-gray-600 border-b-2 border-b-rose-200 w-[100px] small:text-[1.5rem] small:w-[60px]">ontact</span>
+                            <span className="text-[2rem] font-bold text-gray-600 small:text-[1.5rem]">Fe</span>
+                            <span className="text-[2rem] font-bold text-gray-600 border-b-2 border-b-rose-800 w-[100px] small:text-[1.5rem] small:w-[60px]">edback</span>
                         </span>
-                        <span className="text-md font-light small:text-[0.7rem] mobile:text-sm">Please provide a feedback or get in touch!</span>
+                        <span className="text-md font-light small:text-[0.7rem] mobile:text-sm">I'd love to hear from you!</span>
                         <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" className="border-2 border-gray-200 outline-none p-2 pl-2  text-md font-normal text-black w-[70%]" required/>
                         <textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Message" className="border-2 border-gray-200 outline-none p-2 pl-2 text-md  font-normal text-black w-[70%]" rows="5" required></textarea>
                         <span>
-                            <label for="recruiter" className='font-light'>Are you a Recruiter? </label>
                             <input type="checkbox" checked={rec} onChange={() => setRec(!rec)} id="recruiter"></input>
+                            <label for="recruiter" className='font-light'> Wanna hire me? &#128540; </label>
                         </span>
-                        <button type="submit" className="p-2 m-2 bg-cyan-700 text-white rounded-lg">Submit</button>
+                        <button type="submit" className="p-2 m-2 bg-green-100 text-black font-normal rounded-lg hover:opacity-[0.6]">Submit</button>
                     </form>
                 </div>
             </div>
@@ -83,7 +87,7 @@ const Footer = ({darkMode, setDarkMode, pageActive}) => {
             </div>
             <span className='text-sm font-light mt-10'>Copyrights &#169; 2023</span>
         </div>
-    </>
+    </div>
     )
 }
 
