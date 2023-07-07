@@ -58,7 +58,7 @@ const Footer = ({darkMode, setDarkMode, pageActive}) => {
         {/* <div className={`hidden mobile:flex tablet:flex sticky top-0 left-0 right-0 flex justify-between items-center w-full z-10 p-2`}>
             <span className={`text-xl font-bold text-left ${darkMode ? 'bg-black' : 'bg-white'} p-2`}>Contact</span>
         </div> */}
-        <div id="contact" className={`h-[100vh] z-20 w-[80%] bg-white mx-auto ${darkMode ? "shadow shadow-black shadow-3xl" : "shadow-3xl"} bg-transparent rounded-xl  mobile:w-full flex flex-col justify-center items-center px-8 pt-10 mobile:p-2 mobile:mt-[5rem]`}>
+        <div id="contact" className={`h-[100vh] z-20 w-[80%] mx-auto ${darkMode ? "shadow shadow-black shadow-3xl" : "shadow-3xl"} bg-transparent rounded-xl  mobile:w-full flex flex-col justify-center items-center px-8 pt-10 mobile:p-2 mobile:mt-[5rem]`}>
         {/* mobile:snap-center tablet:snap-center laptop:snap-center desktop:snap-center */}
             <div className='w-[70%] h-[60vh] flex flex-col mobile:w-full'>
                 <div className="bg-inherit w-full h-[78%] flex flex-col justify-around items-center mx-auto p-4 small:w-full mobile:w-full transition duration-700">

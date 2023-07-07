@@ -21,7 +21,7 @@ function useParallax(value, distance) {
             <div className={`sticky top-0 right-0 left-0 bottom-0 w-full p-2 ${dark ? "bg-gradient-to-r from-gray-800 to-gray-900":"bg-gradient-to-r from-[#E3F4F4] to-[#93BFCF]"} h-[100vh] flex flex-col items-center justify-start`}>
                 <span className="text-[2rem] font-normal mt-10">Get to Know Me Better!</span>
             </div>
-            <div className={`h-[100vh] z-20 w-[80%] bg-white mx-auto ${dark ? "shadow shadow-black shadow-3xl" : "shadow-3xl"}  bg-transparent rounded-xl  mobile:w-full flex flex-col justify-center items-center px-8 pt-10`}>
+            <div className={`h-[100vh] z-20 w-[80%] mx-auto ${dark ? "shadow shadow-black shadow-3xl" : "shadow-3xl"}  bg-transparent rounded-xl  mobile:w-full flex flex-col justify-center items-center px-8 pt-10`}>
                 {/* mobile:snap-start tablet:snap-center laptop:snap-center desktop:snap-center"> */}
                 <section id="about" 
                 className=" flex flex-col justify-around items-center p-4 h-[70%] w-[80%] text-center
