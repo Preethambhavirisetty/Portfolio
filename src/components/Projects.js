@@ -27,18 +27,18 @@ function useParallax(value, distance) {
     const darkText = dark ? 'text-[#D1D2D3]' : 'text-[#D1D2D3]';
     projects.forEach((obj) => 
         p.push(
-            // tablet:odd:flex-row-reverse laptop:odd:flex-row-reverse desktop:odd:flex-row-reverse
-            <div className={`w-[32%] h-[56%] flex flex-col justify-around shadow-3xl rounded-xl ${dark ? "bg-gray-800" : "bg-white"} p-2
-            mobile:h-fit mobile:flex-col`}>
-                <motion.div className="h-[40%] w-full p-2 rounded-xl mobile:w-full">
+            <div 
+            className={`w-[32%] h-[56%] flex flex-col justify-around shadow-3xl rounded-xl ${dark ? "bg-gray-800" : "bg-white"} p-2
+            mobile:w-[90%] mobile:h-[30%] mobile:p-4 tablet:w-[70%] tablet:h-[30%] tablet:p-4`}>
+                <motion.div className="h-[40%] w-full p-2 rounded-xl tablet:h-[60%]">
                     <img src={obj.image} alt="about" className="w-full h-full"></img>
                 </motion.div>
-                <motion.div ref={about} className="flex flex-col  h-[60%] p-2 mobile:w-full">
+                <motion.div ref={about} className="flex flex-col  h-[60%] p-2 ">
                     <span className="text-[1.3rem] font-bold">{obj.name}</span>
                     {/* <span className="text-[1.2rem] font-normal ">{obj.type}</span> */}
-                    <span className="text-[0.9rem] font-light ">{obj.Description}</span>
+                    <span className="text-[0.9rem] font-light tablet:text-[1.1rem]">{obj.Description}</span>
                 </motion.div>
-                <motion.div className="flex justify-start items-center space-x-2 px-2 flex flex-col w-full">
+                <motion.div className="flex justify-start items-center space-x-2 px-2 w-full">
                     {/* <span classname="">Tech Stack</span>   */}
                     <span className="flex flex-row">{obj.tech.map((icon) => {return <img src={icon} alt="html_svg" className="p-2 rounded-full shadow" width="40" height="40"/>})}</span>
                 </motion.div>
@@ -47,14 +47,17 @@ function useParallax(value, distance) {
 )
     return (
         <div className="flex flex-col h-fit mb-0 -space-y-[80vh]">
-            <div className={`sticky top-0 right-0 left-0 bottom-0 w-full p-2 ${dark ? "bg-gradient-to-r from-gray-800 to-gray-900":"bg-gradient-to-r from-[#F7FFE5] to-[#A0C49D]"}  h-[100vh] flex flex-col justify-start items-center`}>
-                <span className="text-[2.5rem] font-normal mt-10">Projects</span>
+            <div className={`sticky top-0 right-0 left-0 bottom-0 w-full p-2 ${dark ? "bg-gradient-to-r from-gray-800 to-gray-900":"bg-gradient-to-r from-[#D2E9E9] to-[#B0DAFF]"}  h-[100vh] flex flex-col justify-start items-center`}>
+            {/* ${dark ? "bg-gradient-to-r from-gray-800 to-gray-900":"bg-gradient-to-r from-[#F7FFE5] to-[#A0C49D]"} */}
+                <span className="text-[2rem] font-normal mt-10">Projects</span>
             </div>
-            {/* <span className="text-[2rem] font-normal mt-10">Projects</span> */}
-            <div className={`hidden mobile:flex tablet:flex sticky  top-0 left-0 right-0 flex justify-between items-center w-full z-10 p-2`}>
+            {/* <div className={`hidden mobile:flex tablet:flex sticky  top-0 left-0 right-0 flex justify-between items-center w-full z-10 p-2`}>
                 <span className={`text-xl font-bold text-left ${dark ? 'bg-black' : 'bg-white'} p-2`}>Projects</span>
-            </div>
-            <section id="projects" className={`${dark ? 'bg-black shadow shadow-black shadow-3xl' : 'shadow-3xl'} h-[100vh] z-20 w-[95%] mx-auto rounded-xl bg-transparent mobile:w-full flex flex-row flex-wrap space-x-4 p-[10px] space-y-0 justify-center items-center pt-10  mobile:mt-[2rem]`}>
+            </div> */}
+            <section id="projects" 
+            className={`${dark ? 'bg-black shadow shadow-black shadow-3xl' : 'shadow-3xl'} h-[100vh] z-20 w-[95%] mx-auto rounded-xl bg-transparent flex flex-row flex-wrap space-x-4 p-[10px] space-y-0 justify-center items-center pt-10  
+            mobile:w-full mobile:h-[180vh] mobile:flex mobile:flex-col mobile:flex-nowrap mobile:justify-center mobile:items-center mobile:p-0 mobile:pt-20 mobile:space-y-4 mobile:space-x-0
+            tablet:w-full tablet:h-[180vh] tablet:flex tablet:flex-col tablet:flex-nowrap tablet:justify-center tablet:items-center tablet:p-0 tablet:pt-20 tablet:space-y-4 tablet:space-x-0`}>
             {/* tablet:snap-center laptop:snap-center desktop:snap-center */}
                 {p}
             </section>

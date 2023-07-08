@@ -65,12 +65,12 @@ const Footer = ({darkMode, setDarkMode, pageActive}) => {
                     <span className="font-light text-md transition duration-500 ease-in-out">{msg}</span>
                     <form className="w-full flex flex-col items-center justify-around space-y-2 p-4" onSubmit={handleSubmit}>
                         <span className="flex">
-                            <span className="text-[2rem] font-bold text-gray-600 small:text-[1.5rem]">Fe</span>
-                            <span className="text-[2rem] font-bold text-gray-600 border-b-2 border-b-rose-800 w-[100px] small:text-[1.5rem] small:w-[60px]">edback</span>
+                            <span className={`text-[2rem] font-bold ${darkMode ? 'text-gray-200':'text-emrald-300'} small:text-[1.5rem]`}>Fe</span>
+                            <span className={`text-[2rem] font-bold ${darkMode ? 'text-gray-200':'text-emrald-300'} border-b-2 border-b-rose-800 w-[70px] small:text-[1.5rem] small:w-[60px]`}>edback</span>
                         </span>
                         <span className="text-md font-light small:text-[0.7rem] mobile:text-sm">I'd love to hear from you!</span>
-                        <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" className="border-2 border-gray-200 outline-none p-2 pl-2  text-md font-normal text-black w-[70%]" required/>
-                        <textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Message" className="border-2 border-gray-200 outline-none p-2 pl-2 text-md  font-normal text-black w-[70%]" rows="5" required></textarea>
+                        <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" className="border-2 border-gray-200 outline-none p-2 pl-2 text-md font-normal text-black w-[70%] mobile:w-[80%]" required/>
+                        <textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Message" className="border-2 border-gray-200 outline-none p-2 pl-2 text-md  font-normal text-black w-[70%] mobile:w-[80%]" rows="5" required></textarea>
                         <span>
                             <input type="checkbox" checked={rec} onChange={() => setRec(!rec)} id="recruiter"></input>
                             <label for="recruiter" className='font-light'> Wanna hire me? &#128540; </label>

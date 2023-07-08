@@ -26,8 +26,8 @@ import { motion } from "framer-motion";
     }
     return (
         <div style={{color: text}} className="flex flex-row items-center space-y-4 p-0 mx-auto w-[100%]
-            small:w-full small:p-0  mobile:w-full mobile:p-0 mobile:bg-white-100 tablet:w-full">
-            <div className="container w-[100%] flex flex-row flex-wrap justify-center items-center space-x-0 
+            small:w-full small:p-0  mobile:w-full mobile:p-0 tablet:w-full">
+            <div className="w-[100%] flex flex-row flex-wrap justify-center items-center space-x-0 
                 small:w-full small:space-x-0 small:flex-col small:bg-white-200 small:p-2
                 mobile:w-full mobile:space-x-0 mobile:flex-col mobile:bg-white-200 tablet:w-full mobile:p-2">
 
@@ -44,7 +44,7 @@ import { motion } from "framer-motion";
                     animate={{scale:[1, 1.2, 1]}}>
                     <div className="flex flex-row justify-around items-center space-x-6  w-full p-2
                     small:w-full small:bg-white-200 small:flex-wrap small:pl-0 small:ml-0
-                    mobile:w-full mobile:bg-white-200 mobile:flex-wrap mobile:pl-0 mobile:ml-0">
+                    mobile:w-full mobile:flex-wrap mobile:pl-0 mobile:ml-0">
                         <span className={`p-2 rounded-full  ${dark ? '': 'shadow-lg'}`}><img src={python} alt="python_svg" width="30" height="30" /></span>
                         <span className={`p-2 rounded-full  ${dark ? '': 'shadow-lg'}`}><img src={js} alt="js_svg" width="30" height="30" /></span>
                         <span className={`p-2 rounded-full  ${dark ? '': 'shadow-lg'}`}><img src={html} alt="html_svg" width="30" height="30" /></span>

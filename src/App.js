@@ -114,15 +114,18 @@ function App() {
     <>
       <div ref={refs.homeref}></div>
       {/* <Home darkMode={darkMode}/> */}
-      <motion.div className={`hidden mobile:flex tablet:flex fixed ${darkModeClasses} top-0 left-0 right-0 flex justify-between items-center w-full z-10 p-2 snap-y snap-proximity`}>
+      {/* <motion.div className={`hidden mobile:flex tablet:flex fixed ${darkModeClasses} top-0 left-0 right-0 flex justify-between items-center w-full z-10 p-2 snap-y snap-proximity`}>
             <span className="text-xl font-bold text-left">About</span>
             <span className='text-[1.4rem] font-bold font-dance ml-10'>Preetham</span>
             <div className={`${darkMode ? '' : 'border-cyan-600'} border rounded-full w-[40%] flex flex-row justify-around`}>
                 <button className={`${darkMode ? 'bg-[#CBE4DE] text-black' : ''} rounded-full w-[50%] text-sm  p-2`} onClick={() => {setDarkMode(true); localStorage.setItem('dl967', true)}}>Dark <i className="fa fa-moon-o"></i> </button>
                 <button className={`${!darkMode ? 'bg-[#CBE4DE] text-black' : ''} rounded-full w-[50%] text-sm p-2`} onClick={() => {setDarkMode(false); localStorage.setItem('dl967', false)}}>Light <i className="fa fa-sun-o"></i> </button>
             </div>
-        </motion.div>
-      <div className={`${darkModeClasses} w-full h-full flex flex-row justify-between items-center`}>
+        </motion.div> */}
+        <div className='fixed top-[85%] right-[10px] border-0 p-2 flex justify-center items-center bg-gradient-to-t to-white from-gray-400 shadow-3xl rounded-full z-40 w-12 h-12 tablet:w-14 tablet:h-14' onClick={() => {{setDarkMode(!darkMode); localStorage.setItem('dl967', !darkMode)}}} >
+          {darkMode ? <i className="fa fa-moon-o text-xl"></i> : <i className="fa fa-sun-o text-xl"></i>}
+        </div>
+      <div className={`${darkModeClasses} w-full h-full flex flex-row justify-between items-center mobile:bg-pink-500`}>
         <div 
         className={`mt-0 fixed top-0 left-0 bottom-0 w-[30%] flex flex-col justify-between items-center py-10 ${darkMode ? "bg-gradient-to-r from-gray-900 to-gray-800 shadow shadow-black shadow-3xl":"bg-gradient-to-t from-[#F8F6F4] to-[#C4DFDF] shadow shadow-3xl"} 
         mobile:invisible tablet:invisible`}>
